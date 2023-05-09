@@ -92,4 +92,10 @@ public class AviaSoulsTest {
 
         Assertions.assertArrayEquals(expected, actual);
     }
+    @Test
+    public void testSearchAndSortBy_fullArrayExistingAirports() {
+        Ticket[] expected = new Ticket[0];
+        Ticket[] actual = manager.searchAndSortBy("Дубай", "Париж", Comparator.comparing(Ticket::getPrice));
+        assertArrayEquals(expected, actual);
+    }
 }
